@@ -8,7 +8,7 @@ let numeros = [6, 6, 1, 2, 4, 3, 8, 7];
 for (let i = 0; i < numeros.length; i++) {
     for (let j = 0; j < numeros.length; j++) {
         if (numeros[j] > numeros [j + 1]) {
-            let temp = numeros[j];
+            let temp = numeros[j];    /////// Para ayudar a cambiar los valores entre array[i] y array[j]. La variable temporal se usa para  poder evaluar matriz [i] y matriz [j]: guarda la matriz [i] en una ubicación temporal, la sobrescribe con matriz [j] y luego asigna el valor que reserva (temporalmente) a matriz[j].
             numeros [j] = numeros [j + 1];
             numeros [j + 1] = temp;
         };
