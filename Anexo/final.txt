@@ -1,0 +1,130 @@
+// 1)Crear una función que reciba por parámetro el array de artículos.
+ //Deberá agregar en cada objeto una propiedad llamada total que contenga el valor de lo que
+ // recaudaría si se vendieran todos los productos 
+ //(sacar el valor total del stock de cada producto) precio*cantidad
+
+
+ const arrayProductos = [
+    { nombre: 'Samsung TV', precio: 6000, cantidad: 10 },
+    { nombre: 'DELL notebook', precio: 4000, cantidad: 30 },
+    { nombre: 'Auriculares Sony', precio: 1500, cantidad: 15 },        
+    { nombre: 'Monitor Philips', precio: 12000, cantidad: 20 },        
+    { nombre: 'Teclado logitech', precio: 3000, cantidad: 5 }
+  ];
+
+function propiedades (arrayProductos, precio, cantidad) {
+    let total = 0;
+    for (let i = 0; i < arrayProductos.length; i++) {
+        total += arrayProductos[i].precio * arrayProductos[i].cantidad;
+        };
+    
+    return total;
+};
+
+let resultadoTotal = propiedades (arrayProductos);
+console.log(resultadoTotal);
+
+const agregarTotal = (arrayProductos, resultadoTotal) =>{
+    for (let i = 0; i < arrayProductos.length; i++) {
+        const producto = arrayProductos[i];
+        producto.total = i + 1;
+        
+    }
+    return arrayProductos;
+};
+console.log(agregarTotal(arrayProductos));
+
+
+
+
+
+//--------------------------------------------------------------
+//2)Desarrollar una función que reciba por parámetro él array de países 
+//y ordene de forma ascendente según la propiedad superficie.
+
+let paises = [
+    { nombre: 'Canada', superficie: 9.9 },
+    { nombre: 'China', superficie: 9.6 },
+    { nombre: 'Brasil', superficie: 8.5 },
+    { nombre: 'Australia', superficie: 7.69 },
+    { nombre: 'India', superficie: 3.29 },
+    { nombre: 'Kazajistan', superficie: 2.79},
+    { nombre: 'Argelia', superficie: 2.38 }
+];
+console.log(paises);
+function ordenar (paises) {
+    for (let i = 0; i < paises.length; i++) {
+        for (let j = 0; j < paises.length - 1; j++) {
+            if (paises[j].superficie > paises [j + 1].superficie) {
+                    let temp = paises [j];
+                    paises [j] = paises [j + 1];
+                    paises [j + 1] = temp;
+                }
+        }
+        
+    }
+    return paises;
+};
+console.log(ordenar(paises));
+
+
+
+//--------------------------------------------------------------------------------------------------------------
+// 3)
+// Crear una matriz de  3 filas x 7 columnas de numeros enteros 
+// let numeros =[
+//     [1, 2, 3, 4, 5, 6, 7],
+//     [8, 9, 10, 11, 12, 13, 14],
+//     [15, 16, 17, 18, 19, 20, 21]
+// ];
+// console.table (numeros);
+//Crear una función que reciba la matriz creada por parámetro, 
+//deberá retornar la sumatoria de todos los valores excepto de los de la cuarta columna;
+
+function suma (num) {
+    let suma = 0;
+    
+    for (let i = 0; i < num.length; i++) {
+        for (let j = 0; j < num[i].length - 1; j++) {
+            if (j !== [3]) {
+                suma += numeros[i][j];
+                
+            }
+            
+        }
+        
+    }
+    
+    return suma;
+};
+
+let resultadoDos = suma (numeros);
+console.log(resultadoDos);
+
+// c) Crear una función que reciba la matriz generada por parámetro y un valor numérico, 
+// deberá retornar un array con todos los valores mayores al parámetro recibido como  valor Numérico
+
+let numerosDos =[
+        [1, 2, 3, 4, 5, 6, 7],
+        [8, 9, 10, 11, 12, 13, 14],
+        [15, 16, 17, 18, 19, 20, 21]
+    ];
+
+let mayorQue = 4;
+
+function mayor (numero, mayorQue) {
+    
+    for (let i = 0; i < numero.length; i++) {
+        for (let j = 0; j < numero[i].length - 1; j++) {
+            if (numerosDos[i][j] > mayorQue) {
+                return numero[i][j] ;
+            }
+
+        }
+}
+return numero;
+};
+
+let resultadoTres = mayor(numerosDos);
+console.table(resultadoTres);
+

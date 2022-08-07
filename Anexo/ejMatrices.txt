@@ -1,0 +1,82 @@
+let matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8 ,9]
+];
+console.table(matriz);
+
+// Quiero sumar la diagonal principal de la matris: los numeros 1, 5 y 9.
+// recorro con un doble for.
+function sumaDiagonal (arreglo) { //no llamo a la matriz porque se la vamos a dar como valor mediante el console.log
+    let diagonalPrincipal = 0; // creo una variable para guardar el valor.
+    for (let i = 0; i < arreglo.length; i++) {
+        for (let j = 0; j < arreglo[i].length; j++) {
+            // tanto como 1, 5 y 9 van a tener el mismo valor de poscision tanto en fila como en columna de
+            // es decir: (0,0) para 1, (1,1) para 5, etc. enotnces en el iff vamos a consultar si el numero tiene el kismo numero de indice tanto en fila como en columna.
+            if (i == j) {
+                diagonalPrincipal += arreglo[i][j] //establesco que se sumen los valores que coincidan en valor en indices i y j.
+                
+            }
+            
+        }
+        
+    }
+    return diagonalPrincipal;
+    
+}
+// es buena prcatica guardar los resultados en variables:
+let resultadoSuma = sumaDiagonal (matriz);
+console.log(resultadoSuma);
+
+
+//-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//ejemplo 2
+//Escribir una funcion que reciba un array de elementos y me indique si estan ordenados o no de menor a amyor.
+// Debe retornar true si esta ordenado o false si no esta ordenado.
+
+let pruebaA = [4, 3, 1, 7, 9, 0, 4, 2];
+let pruebaB = [1, 2, 3, 4, 5, 6, 7, 8];
+
+// podemos llamar a la n cantidad de elementos del array de elementos
+function estaOrdenado (numeros) {
+    for (let i = 0; i < numeros.length-1; i++) {
+        if (numeros[i] > numeros[i+1]) {
+            return false;
+        }
+        return true;
+    }
+    
+};
+console.log(estaOrdenado(pruebaA));
+console.log(estaOrdenado(pruebaB));
+
+
+//--------------------------------------------------------------------------------------------------------
+//ej ; sumar todos los valores de la matriz
+
+let matrizDos=[
+    [36, 42, 95, 1],
+    [84, 55, 1, 78],
+    [26, 1, 36, 11],
+    [1, 97, 88, 22],
+];
+
+function sumaMatrizDos(arr){
+
+    let resultado = 0;
+    for (let i = 0; i < arr.length; i++) {
+        
+        for (let j = 0; j < arr[i].length; j++) {
+            
+            resultado += arr[i][j];
+            
+        }
+        
+    }
+    return resultado;
+};
+let resultadoSumaDos = sumaMatrizDos (matrizDos);
+console.log(resultadoSumaDos);
+
+
+

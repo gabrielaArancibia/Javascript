@@ -1,0 +1,54 @@
+let arreglo = [8, 15, 23, 38];
+
+for (let i = 0; i < arreglo.length; i++) {
+    
+    for (let j = 0; j < arreglo.length - 1; j++) {
+    
+        if (arreglo[i] > arreglo[i+1]) {
+
+            let temp = arreglo[i];
+            arreglo[i] = arreglo[i+1];
+            arreglo[i+1] = temp;
+        
+        }
+    }    
+}
+console.log(arreglo);
+
+
+//-------------------------------------------------------------------------------------
+// con array de objetos
+let personas =[
+    {
+        nombre: 'Ariana',
+        apellido: 'Grande',
+        ocupacion: 'Cantante',
+        estatura: 156,
+    },
+    {
+        nombre: 'Dua',
+        apellido: 'Lipa',
+        ocupacion: 'Bailarina',
+        estatura: 174,
+    },
+    {
+        nombre: 'Taylor',
+        apellido: 'Swift',
+        ocupacion: 'Cantante',
+        estatura: 194,
+    }
+];
+//los vamos a ordenar segun su estatura.
+for (let i = 0; i < personas.length; i++) {
+    
+    for (let j = 0; j < personas.length - 1; j++) {
+    
+        if (personas[i].estatura > personas[i+1].estatura) {
+
+            let temp = personas[i];
+            personas[i] = personas[i+1];
+            personas[i+1] = temp;
+        
+        }
+    }    
+}

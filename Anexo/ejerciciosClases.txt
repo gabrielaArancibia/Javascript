@@ -1,0 +1,559 @@
+//----------------------------------------------------------------------------------------
+/*Crear la estructura adecuada para guardar las siguientes películas:
+"star wars", "totoro", "rocky", "pulp fiction", "la vida es bella"
+Importante: verificá que todo funciona correctamente accediendo a alguna de
+las películas una vez creada la estructura correspondiente.*
+
+Más tarde, de producción dieron el aviso de que las películas deberían estar todas
+en mayúsculas. Para esto solicitan que crees una función que reciba por
+parámetro un array y convierta el contenido de cada elemento a mayúsculas.
+Pista: revisá qué hace el método de strings .toUpperCase().
+
+*/
+
+let peliculas = ["star wars", "totoro", "rocky", "pulp fiction", "la vida es bella"]
+
+let peliculasMayusculas = []
+
+function mayusculas(array) {
+    for(let i=0; i < array.length; i++) {
+  
+        peliculasMayusculas.push(array[i].toUpperCase())   }
+    console.log(peliculasMayusculas)}
+
+mayusculas(peliculas)
+
+/*Mientras trabajabas en el feature anterior, se dio el aviso de que también hay que
+crear otra estructura similar a la primera, pero con las siguientes películas
+animadas:
+"toy story", "finding Nemo", "kung-fu panda", "wally", "fortnite"
+Por lo tanto, te piden crear una función que reciba dos arrays como parámetros,
+para poder agregar los elementos contenidos en el segundo array dentro del
+primero, y así retornar un solo array con todas las películas como sus elementos.
+Importante: las películas animadas también deberían convertirse a mayúsculas.*/
+
+let animadas = ["toy story", "finding Nemo", "kung-fu panda", "wally", "fortnite"]
+
+mayusculas(animadas)
+
+/* Durante el proceso, uno de los desarrolladores advierte que el último elemento del
+array de películas animadas es un videojuego. Ahora tenés que editar el código y
+modificarlo de manera que puedas eliminar ese último elemento antes de migrar el
+contenido al array que contenga todas las películas.
+PD: por precaución, guardá el elemento que vas a eliminar en una variable.*/
+
+let eliminada = peliculasMayusculas.pop()
+console.log(eliminada)
+console.log(peliculasMayusculas)
+
+/* Finalmente, te envían dos arrays con calificaciones que hacen distintos usuarios
+del mundo sobre las películas con el siguiente formato:
+const asiaScores = [8, 10, 6, 9, 10, 6, 6, 8, 4];
+
+2
+
+const euroScores = [8, 10, 6, 8, 10, 6, 7, 9, 5];
+Te piden crear una función que compare las calificaciones e indique si son iguales
+o diferentes. Te confirman que están en el orden adecuado y que solo traen
+valores numéricos del 1 al 10.
+PD: los elementos de los scores tanto de Asia como de Europa corresponden en
+orden al del array resultante de combinar películas con películas animadas. Es
+decir, el primer elemento del array de películas general corresponde al primer
+elemento de asiaScores y al primer elemento de euroScores, y así sucesivamente.*/ 
+
+const asiaScores = [8, 10, 6, 9, 10, 6, 6, 8, 4]
+const euroScores = [8, 10, 6, 8, 10, 6, 7, 9, 5]
+
+function comparacion(array1, array2, array3) {
+    for (let i = 0; i < array1.length; i++) {
+        if(array1[i] == array2[i]){console.log("el puntaje de la pelìcula " + array3[i] + " es igual y es " + array1[i])}
+        else { 
+            console.log("el puntaje 1 de la pelicula " + array3[i] + " es " + array1[i] + " y el segundo es " + array2[i])
+        }
+    }
+}
+
+comparacion(asiaScores, euroScores, peliculasMayusculas)
+
+
+
+
+//------------------------------------------------------------------------------------------------------
+/*Creá la función imprimirInverso que tome un array como argumento y que
+imprima en la consola cada elemento en orden inverso (no tenés que invertir el
+array).*/
+
+let arrayInvertido = []
+function imprimirInverso(array) {
+    
+    for (let i = array.length -1 ; i >= 0 ; i--){
+        arrayInvertido.push(array[i])
+
+    }
+
+    console.log(arrayInvertido)
+}
+
+array1 = ["hola", "chau", "veamos si funciona"]
+
+imprimirInverso(array1)
+//--------------------------------------------------------------------------------------------------
+
+/* En este ejercicio, deberás crear una función sumaArray() que acepte un arreglo de
+números (3 elementos) y devuelva la suma de todos ellos. Ejemplo:
+● sumArray([1,2,3]) // 6
+● sumArray([10, 3, 10]) // 23
+● sumArray([-5,100, 19]) // 114*/
+
+
+
+function suma(array) {
+    if (array.length == 3){ console.log(parseInt(parseInt(array[0]) + parseInt(array[1])+ parseInt(array[2])))}
+    
+    else { console.log("el array debe contener 3 numeros")};
+
+}
+
+let array1 = [1, 5, 7]
+suma(array1)
+
+//-----------------------------------------------------------------------------------------------------------------
+/* En este ejercicio deberás crear una función llamada join() que reciba un arreglo de
+strings de 4 elementos y simule el comportamiento del método Array.join().
+Importante: no podés usar el método Array.join() original.
+Ejemplo:
+● join(["h","o","l","a"]) debe retornar el string "hola".
+● join(["c","h","a,"u"]) debe retornar el string "chau".*/
+
+let a = ["h","o","l","a"]
+let b =["c","h","a","u"]
+
+function join(array){ 
+        console.log(array[0] + array[1] + array[2] + array[3])
+
+
+    }
+
+join(a)
+join(b)
+//--------------------------------------------------------------------------------------------------
+/*En este ejercicio deberás crear una función que devuelva un array con sus elementos
+invertidos, sin modificarlo. Luego, deberás hacer una función que lo modifique e invierta
+el orden de sus elementos.
+1. Creá la función imprimirInverso que tome un array como argumento y que
+imprima en la consola cada elemento en orden inverso (no tenés que invertir el
+array).
+2. Creá la función inversor que tome un array como argumento y devuelva uno
+nuevo invertido.*/
+
+let pelis = ["star wars", "totoro", "rocky", "pulp fiction", "la vida es bella"];
+console.log(`El array original: ${pelis}`);
+
+let invertirArray = array => {
+    let arrayInvertido = array.slice().reverse();
+    return arrayInvertido;
+}
+
+console.log(`El array invertido es: ${invertirArray(pelis)}`);
+
+let invertirModificarArray = array => {
+    array.reverse();
+    return array;
+}
+console.log(`El array invertido y modificado es: ${invertirModificarArray(pelis)}`);
+
+//---------------------------------------------------------------------------------------------------------------
+/ Ejercicio clase
+
+
+let marcas = [
+    {
+        nombre: 'Apple',
+        valor: 355.080
+    },
+    {
+        nombre: 'Amazon',
+        valor: 300.273
+    },
+    {
+        nombre: 'Google',
+        valor: 550.273
+    }
+];
+
+//ejercicio c.a
+function buscarMarcas (nombreMarca) {
+    for (let i=0; i<marcas.length; i++){
+        let marca = marcas [i];
+        if (nombreMarca === marcas[i].nombre) {
+            return marcas [i]
+        }
+    }
+        return null
+}
+
+//ejercicio c.b
+function incrementarValorMarcas(marcas){
+
+    for(let i = 0; i < marcas.length; i++){
+        marcas[i].valor *= 1.01; 
+    }
+
+    return marcas;
+
+}
+
+//console.log(buscarMarcas('Amazon'));
+//console.log(incrementarValorMarcas(marcas));
+
+//ejercicio c.c
+function agregarMarcas(marcas){
+
+    let marcasAAgregar = [
+        {
+            nombre: 'Samsung',
+            valor: 107.284
+        },
+        {
+            nombre: 'Facebook',
+            valor: 101.201
+        },
+        {
+            nombre: 'ICBC',
+            valor: 75.119
+        },
+        {
+            nombre: 'Huawei',
+            valor: 71.233
+        },
+        {
+            nombre: 'Verizon',
+            valor: 69.639
+        }
+    ]
+
+    for(let i = 0; i < marcasAAgregar.length; i++){
+        marcas.push(marcasAAgregar[i]);
+    }
+
+    return marcas;
+}
+
+//console.log(agregarMarcas(marcas));
+
+//ejercicio d.
+function agregarId(marcas){
+
+    for(let i = 0; i < marcas.length; i++){
+        marcas[i].id = i+1;
+    }
+
+    return marcas;
+}
+
+//console.log(agregarId(marcas));
+
+//ejercicio e.
+function buscarPorId(marcas, id){
+
+    let marcasConId = agregarId(marcas);
+
+    for(let i = 0; i < marcasConId.length; i++){
+
+        if(marcasConId[i].id == id){
+            return marcasConId[i];
+        }
+
+    }
+
+    return null;
+}
+
+//console.log(buscarPorId(marcas, 10));
+
+//ejercicio f.
+let objetoGeneral = [
+    {
+        nombre: 'Apple',
+        valor: 355.080
+    },
+    {
+        nombre: 'Amazon',
+        valor: 300.273
+    },
+    {
+        nombre: 'Google',
+        valor: 550.273
+    },
+    {
+        buscarMarcas: function(nombreMarca){
+         
+            for (let i=0; i<marcas.length; i++){
+                let marca = marcas [i];
+                if (nombreMarca === marcas[i].nombre) {
+                    return marcas [i]
+                }
+            }
+                return null
+        }
+    },
+    {
+        incrementarValorMarcas: function(marcas){
+
+            for(let i = 0; i < marcas.length; i++){
+                marcas[i].valor *= 1.01; 
+            }
+        
+            return marcas;
+        
+        }
+    },
+    {
+        agregarMarcas: function(marcas){
+
+            let marcasAAgregar = [
+                {
+                    nombre: 'Samsung',
+                    valor: 107.284
+                },
+                {
+                    nombre: 'Facebook',
+                    valor: 101.201
+                },
+                {
+                    nombre: 'ICBC',
+                    valor: 75.119
+                },
+                {
+                    nombre: 'Huawei',
+                    valor: 71.233
+                },
+                {
+                    nombre: 'Verizon',
+                    valor: 69.639
+                }
+            ]
+        
+            for(let i = 0; i < marcasAAgregar.length; i++){
+                marcas.push(marcasAAgregar[i]);
+            }
+        
+            return marcas;
+        }
+    },
+    {
+        agregarId: function(marcas){
+
+            for(let i = 0; i < marcas.length; i++){
+                marcas[i].id = i+1;
+            }
+        
+            return marcas;
+        }
+    },
+    {
+        buscarPorId: function(marcas, id){
+
+            let marcasConId = agregarId(marcas);
+        
+            for(let i = 0; i < marcasConId.length; i++){
+        
+                if(marcasConId[i].id == id){
+                    return marcasConId[i];
+                }
+        
+            }
+        
+            return null;
+        }
+    }
+
+];
+//---------------------------------------------------------------------------------------------------------------------------------------------
+const arrayProfesionales = [
+    {
+      id: 0,
+      estaHabilitado: false,
+      nombre: "Huber Wilkins",
+      email: "huberwilkins#speedbolt.com",
+      especialidad: "Neumonologia",
+      cantidadConsultas: 3,
+    },
+    {
+      id: 1,
+      estaHabilitado: true,
+      nombre: "Goldie Haley",
+      email: "goldiehaley#speedbolt.com",
+      especialidad: "Cardiologia",
+      cantidadConsultas: 3,
+    },
+    {
+      id: 2,
+      estaHabilitado: false,
+      nombre: "Pena Landry",
+      email: "penalandry@speedbolt.com",
+      especialidad: "Dermatologia",
+      cantidadConsultas: 9,
+    },
+    {
+      id: 3,
+      estaHabilitado: false,
+      nombre: "Leanne Burch",
+      email: "leanneburch#speedbolt.com",
+      especialidad: "Neumonologia",
+      cantidadConsultas: 13,
+    },
+    {
+      id: 4,
+      estaHabilitado: false,
+      nombre: "Haynes Fuentes",
+      email: "haynesfuentes@speedbolt.com",
+      especialidad: "Cardiologia",
+      cantidadConsultas: 75,
+    },
+    {
+      id: 5,
+      estaHabilitado: true,
+      nombre: "Tamika Fuentes",
+      email: "tamikanewman@speedbolt.com",
+      especialidad: "Cardiologia",
+      cantidadConsultas: 32,
+    },
+    {
+      id: 6,
+      estaHabilitado: true,
+      nombre: "Russo Baldwin",
+      email: "russobaldwin@speedbolt.com",
+      especialidad: "Dermatologia",
+      cantidadConsultas: 67,
+    },
+    {
+      id: 7,
+      estaHabilitado: true,
+      nombre: "Dodson Shaffer",
+      email: "dodsonshaffer#speedbolt.com",
+      especialidad: "Cardiologia",
+      cantidadConsultas: 2,
+    },
+    {
+      id: 8,
+      estaHabilitado: true,
+      nombre: "Guerra Bright",
+      email: "guerrabright#speedbolt.com",
+      especialidad: "Neumonologia",
+      cantidadConsultas: 6,
+    },
+    {
+      id: 9,
+      estaHabilitado: true,
+      nombre: "Dina Navarro",
+      email: "dinanavarro@speedbolt.com",
+      especialidad: "Cardiologia",
+      cantidadConsultas: 8,
+    },
+    {
+      id: 10,
+      estaHabilitado: false,
+      nombre: "Stafford Watts",
+      email: "staffordwatts@speedbolt.com",
+      especialidad: "Cardiologia",
+      cantidadConsultas: 0,
+    },
+    {
+      id: 11,
+      estaHabilitado: false,
+      nombre: "Joni Avery",
+      email: "joniavery@speedbolt.com",
+      especialidad: "Neumonologia",
+      cantidadConsultas: 6,
+    },
+    {
+      id: 12,
+      estaHabilitado: true,
+      nombre: "Mayra Tran",
+      email: "mayratran@speedbolt.com",
+      especialidad: "Oftamologia",
+      cantidadConsultas: 2,
+    },
+    {
+      id: 13,
+      estaHabilitado: false,
+      nombre: "Ward Dale",
+      email: "warddale@speedbolt.com",
+      especialidad: "Cardiologia",
+      cantidadConsultas: 23,
+    },
+];
+
+console.table(arrayProfesionales);
+
+/*1) Desarrollar una función llamada buscarPorId que reciba un array de
+profesionales y un número que represente él identificador, realizar la búsqueda
+de dentro del array, en caso de coincidencias retornar él objeto, caso contrario
+retornar null*/
+
+const buscarPorId = (arrayProfesionales, id) =>{
+
+    for (let i = 0; i < arrayProfesionales.length; i++) {
+      if(arrayProfesionales[i].id === id){
+        return arrayProfesionales[i];
+      }
+    }
+    return null;
+}
+console.log("Punto 1:");
+console.log(buscarPorId(arrayProfesionales,10)); //retorna el profesional con id = 10
+console.log(buscarPorId(arrayProfesionales,34)); //retorna null porque no existe un profesional con id 34
+
+
+/*2) Desarrollar una función llamada filtrarHabilitadosPorEspecialidad que reciba
+un array de profesionales y un string que represente la especialidad, realizar la
+búsqueda de dentro del array deberá coincidir la especialidad y él profesional
+debe estar habilitado, en caso de coincidencias retornar los profesionales, caso
+contrario retorna un array vacío*/
+
+const filtrarHabilitadosPorEspecialidad = (arrayProfesionales,especialidad) =>{
+    let profesionales = [];
+    for (let i = 0; i < arrayProfesionales.length; i++) {
+        if((arrayProfesionales[i].especialidad === especialidad) && (arrayProfesionales[i].estaHabilitado == true)){
+            profesionales.push(arrayProfesionales[i]);
+        }
+    }
+    return profesionales;
+}
+console.log("Punto 2:");
+console.table(filtrarHabilitadosPorEspecialidad(arrayProfesionales,'Cardiologia'));
+console.table(filtrarHabilitadosPorEspecialidad(arrayProfesionales,'Oftamologia'));
+
+
+/*3) Desarrollar una función llamada realizarConsulta que reciba un número
+que represente él identificador del profesional a buscar, reutilizar la función
+buscarPorId, en caso de encontrar él objeto modificar la propiedad
+cantidadConsultas incrementando su valor actual + 1, caso contrario retornar
+null*/
+const realizarConsulta = identificador =>{
+    let objetoProfesional = buscarPorId(arrayProfesionales,identificador);
+    if(objetoProfesional !== null){
+        objetoProfesional.cantidadConsultas += 1;
+    }else
+        return null;
+}
+console.log("Punto 3:");
+realizarConsulta(12);
+console.table(arrayProfesionales);
+console.log(realizarConsulta(16)); // retonra null ya que no existe un profesional con id = 16
+
+
+/*4) Desarrollar una función llamada corregirEmails que reciba un array de
+profesionales, verificar si existe él carácter # en la propiedad email de cada
+objeto literal introducido por error y reemplazar por @*/
+
+const corregirEmails = arrayProfesionales => {
+    for (let i = 0; i < arrayProfesionales.length; i++) {
+        arrayProfesionales[i].email = arrayProfesionales[i].email.replace('#','@');
+    }
+}
+console.log("Punto 4:");
+corregirEmails(arrayProfesionales);
+console.table(arrayProfesionales); //console.log para verificar que se hizo el reemplazo de # por @
+//-----------------------------------------------------------------------------------------------------------------------------------------------
